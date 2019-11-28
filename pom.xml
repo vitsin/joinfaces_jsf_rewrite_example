@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.2.1.RELEASE</version>
+		<relativePath/> <!-- lookup parent from repository -->
+	</parent>
+	<artifactId>core</artifactId>
+	<packaging>jar</packaging>
+
+	<properties>
+		<java.version>11.0.5-1-redhat</java.version>
+		<joinfaces.version>4.1.0-rc1</joinfaces.version>
+		<maven-model.version>3.6.2</maven-model.version>
+	</properties>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.joinfaces</groupId>
+				<artifactId>joinfaces-dependencies</artifactId>
+				<version>${joinfaces.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+            <dependency>
+                <groupId>org.apache.maven</groupId>
+                <artifactId>maven-model</artifactId>
+                <version>${maven-model.version}</version>                
+            </dependency>            
+			
+		</dependencies>
+	</dependencyManagement>
+
+	<dependencies>
+		<!-- Spring boot starters -->
+		
+		<!-- Monitoring app, gathering metrics, understanding traffic or the state of database, etc -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-cache</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-integration</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-quartz</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.session</groupId>
+			<artifactId>spring-session-core</artifactId>
+		</dependency>
+		
+		
+		<!-- JoinFaces(joinfaces.org ): enables JSF usage inside Spring Boot Starter -->
+		<dependency>
+			<groupId>org.joinfaces</groupId>
+			<!-- Pulls jsf-spring-boot-starter that pulls tomcat-spring-boot-starter and mojarra-spring-boot-starter -->
+			<artifactId>security-spring-boot-starter</artifactId>
+		</dependency>		
+		<dependency>
+            <groupId>org.joinfaces</groupId>
+            <artifactId>rewrite-spring-boot-starter</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.joinfaces</groupId>
+            <artifactId>primefaces-spring-boot-starter</artifactId>
+        </dependency>
+        
+		<!-- Spring webflow and JSF integration -->
+		<dependency>
+			<groupId>org.springframework.webflow</groupId>
+			<artifactId>spring-webflow</artifactId>
+			<version>2.5.1.RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.webflow</groupId>
+			<artifactId>spring-faces</artifactId>
+			<version>2.5.1.RELEASE</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.springframework.webflow</groupId>
+		    <artifactId>spring-binding</artifactId>
+		    <version>2.5.1.RELEASE</version>
+		</dependency>
+
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+			<scope>runtime</scope>
+			<optional>true</optional>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-configuration-processor</artifactId>
+			<optional>true</optional>
+		</dependency>
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<optional>provided</optional>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+			<exclusions>
+				<exclusion>
+					<groupId>org.junit.vintage</groupId>
+					<artifactId>junit-vintage-engine</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.integration</groupId>
+			<artifactId>spring-integration-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+        <dependency>
+            <groupId>javax.enterprise</groupId>
+            <artifactId>cdi-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.glassfish.jaxb</groupId>
+            <artifactId>jaxb-runtime</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.maven</groupId>
+            <artifactId>maven-model</artifactId>
+        </dependency>
+		
+		
+		<!-- CUSTOM DEPENDENCIES -->
+		<dependency>
+			<groupId>org.owasp.esapi</groupId>
+			<artifactId>esapi</artifactId>
+			<version>2.2.0.0</version>
+		</dependency>
+
+		<!-- The Bouncy Castle Crypto package is a Java implementation of cryptographic algorithms. 
+		This jar contains JCE provider and lightweight API for the Bouncy Castle Cryptography APIs for Java 5 to Java 11. -->
+		<dependency>
+		    <groupId>org.bouncycastle</groupId>
+		    <artifactId>bcprov-jdk15on</artifactId>
+		    <version>1.64</version>
+		</dependency>
+		
+		<!--dependency>
+			<groupId>com.maxmind.geoip2</groupId>
+			<artifactId>geoip2</artifactId>
+			<version>2.12.0</version>
+		</dependency-->		
+	</dependencies>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.joinfaces</groupId>
+                    <artifactId>joinfaces-maven-plugin</artifactId>
+                    <version>${joinfaces.version}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-failsafe-plugin</artifactId>
+                    <configuration>
+                        <classesDirectory>${project.build.outputDirectory}</classesDirectory>
+                    </configuration>                
+                    <executions>
+                        <execution>
+                            <id>default</id>
+                            <phase>none</phase>
+                        </execution>
+                        <execution>
+                            <id>integration-test</id>
+                            <goals>
+                                <goal>integration-test</goal>
+                            </goals>
+                        </execution>
+                        <execution>
+                            <id>verify-integration-test</id>
+                            <goals>
+                                <goal>verify</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+
+        <plugins>
+            <plugin>
+                <groupId>org.joinfaces</groupId>
+                <artifactId>joinfaces-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-failsafe-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+	
+
+</project>
