@@ -1,0 +1,4 @@
+# joinfaces_jsf_rewrite_example
+
+This project is an example of how to use <a href="http://joinfaces.org/" rel="nofollow">JoinFaces</a>, <a href="http://www.oracle.com/technetwork/java/javaee/javaserverfaces-139869.html" rel="nofollow">JSF</a>, <a href="https://javaserverfaces.java.net/" rel="nofollow">Mojarra</a>, <a href="http://tomcat.apache.org/" rel="nofollow">Tomcat</a>, <a href="http://primefaces.org/" rel="nofollow">Primefaces</a> and <a href="https://www.ocpsoft.org/rewrite/" rel="nofollow">Rewrite</a> 
+with <a href="https://projects.spring.io/spring-webflow/" rel="nofollow">Spring MVC</a>, <a href="http://projects.spring.io/spring-security/" rel="nofollow">Spring Security</a>, custom filter - all under <a href="http://projects.spring.io/spring-boot/" rel="nofollow">Spring Boot</a>. 
